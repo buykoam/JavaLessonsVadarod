@@ -9,10 +9,10 @@ public class DataTypesVariablesOperators {
 
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
-        double sum = 0;
 
-        sum = a / b;
-        int result = (int) ((sum == 0) ? sum : a % b);
+        double sum = a / b;
+        double ostatok = a % b;
+        double result = ((ostatok == 0) ? sum : ostatok);
 
         System.out.println("Результат " + result);
     }
