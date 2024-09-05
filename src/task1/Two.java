@@ -7,11 +7,8 @@ public class Two {
         int y=2;
         y++;
         int z=6;
-        z--;
-        int c=x+y*z;
-        c++;
-        c++;
-        c++;
+        int c=x--+y++*z--;
+
         System.out.println(c);
     }
 }
