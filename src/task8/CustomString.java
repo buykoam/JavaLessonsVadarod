@@ -3,7 +3,6 @@ package task8;
 public class CustomString {
     public static String text;
 
-
     public CustomString() {
 
     }
@@ -46,5 +45,9 @@ public class CustomString {
     }
     public void substring() {
         System.out.println("Вырезать строку Java c помощью метода String.substring: " + text.substring(7, 11));
+    }
+    public void replaceAll() {
+        String cleaned = text.replaceAll("[^а-яА-ЯёЁa-zA-Z ]+", "");
+        System.out.println(cleaned);
     }
 }
