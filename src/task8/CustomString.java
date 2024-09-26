@@ -32,5 +32,19 @@ public class CustomString {
     public void contains() {
         System.out.println("Cодержит ли ваша строка подстроку Java: " + text.contains("Java"));
     }
-
+    public void indexOf() {
+        System.out.println("Найти позицию подстроки “Java”: " + text.indexOf("Java"));
+    }
+    public void replace() {
+        System.out.println("Заменить все символы “а” на “о”: " + text.replace('a', 'o'));
+    }
+    public void toLowerCase() {
+        System.out.println("Преобразование строки к нижнему регистру " + text.toLowerCase());
+    }
+    public void toUpperCase() {
+        System.out.println("Преобразование строки к верхнему регистру " + text.toUpperCase());
+    }
+    public void substring() {
+        System.out.println("Вырезать строку Java c помощью метода String.substring: " + text.substring(7, 11));
+    }
 }

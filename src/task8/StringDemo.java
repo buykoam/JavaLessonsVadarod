@@ -7,5 +7,10 @@ public class StringDemo {
         customString.endsWith();
         customString.startsWith();
         customString.contains();
+        customString.indexOf();
+        customString.replace();
+        customString.toLowerCase();
+        customString.toUpperCase();
+        customString.substring();
     }
 }
