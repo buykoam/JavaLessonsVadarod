@@ -1,19 +1,18 @@
-package task1;
+package task3;
 
 import java.util.Scanner;
 
-public class OnePointThree {
+public class OnePointOne {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите число:");
 
         double a = scanner.nextDouble();
         double b = scanner.nextDouble();
 
-        double multip = a * b;
-        double sum = a + b;
-        double result = ((a == -1) ? sum : multip);
+        double div = a / b;
+        double ostatok = a % b;
+        double result = ((ostatok == 0) ? div : ostatok);
 
         System.out.println("Результат " + result);
     }
