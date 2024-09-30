@@ -1,56 +1,23 @@
 package task10;
 
-import javax.swing.plaf.PanelUI;
+abstract class Predator {
+    private String habitat; // Среда обитания
+    private double maxSpeed; // Максимальная скорость
+    private String color; // Окрас
 
-public abstract class Predator {
-    public String habitat;
-
-    public int speed;
-    public String color;
-
-    public abstract void hunting();
-    public abstract void voice();
-    public abstract void moves();
-
-    public Predator(){
-
-    }
-    public Predator (String habitat, int speed, String color){
+    public Predator(String habitat, double maxSpeed, String color) {
         this.habitat = habitat;
+        this.maxSpeed = maxSpeed;
         this.color = color;
-        this.speed = speed;
     }
+
+    // Абстрактные методы
+    public abstract void huntingMethod();
+    public abstract String makeSound();
+    public abstract String movementType();
+
     @Override
     public String toString() {
-        return "Predator{" +
-                "habitat='" + habitat + '\'' +
-                ", speed=" + speed +
-                ", color='" + color + '\'' +
-                '}';
+        return "Habitat: " + habitat + ", Max Speed: " + maxSpeed + " km/h, Color: " + color;
     }
-    public String getHabitat() {
-        return habitat;
-    }
-
-    public void setHabitat(String habitat) {
-        this.habitat = habitat;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-
 }
