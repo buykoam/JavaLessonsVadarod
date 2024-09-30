@@ -9,7 +9,6 @@ public abstract class Predator {
     public String color;
 
     public abstract void hunting();
-    public abstract void data();
     public abstract void voice();
     public abstract void moves();
 
