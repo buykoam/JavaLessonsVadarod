@@ -1,12 +1,6 @@
 package task13;
 
 public class Student {
-    private final String name;
-    private final String surName;
-    private final String birthday;
-    private final String city;
-    private final double averageBall;
-
     public Student(String name, String surName, String birthday, String city, double averageBall) {
         this.name = name;
         this.surName = surName;
@@ -33,4 +27,21 @@ public class Student {
     public double getAverageBall() {
         return averageBall;
     }
+    private final String name;
+    private final String surName;
+    private final String birthday;
+    private final String city;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", surName='" + surName + '\'' +
+                ", birthday='" + birthday + '\'' +
+                ", city='" + city + '\'' +
+                ", averageBall=" + averageBall +
+                '}';
+    }
+
+    private final double averageBall;
 }

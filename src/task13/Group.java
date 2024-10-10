@@ -1,13 +1,31 @@
 package task13;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
-public class Group extends Student{
-    private final int group;
-
+public class Group extends Function {
     public Group(int group) {
         this.group = group;
+        this.students = new ArrayList<>();
     }
-    ArrayList<Student> student = new ArrayList<>(Arrays.asList(getName(), getSurName(), getBirthday(), getCity(), getAverageBall()));
+
+    public void addStudents(Student student){
+        students.add(student);
+    }
+
+    public List<Student> getStudents(){
+     return students;
+    }
+    private final int group;
+
+    @Override
+    public String toString() {
+        return "Group{" +
+                "group=" + group +
+                ", students=" + students +
+                '}';
+    }
+
+    private List<Student> students;
 }
+
