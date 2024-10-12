@@ -30,21 +30,40 @@ public class Demo {
         Group group1 = new Group(2224);
         Group group2 = new Group(8675);
 
-        group.addStudents(student);
-        group.addStudents(student2);
-        group.addStudents(student3);
-        group.addStudents(student4);
-        group.addStudents(student5);
-        group.addStudents(student6);
-
         Faculty faculty = new Faculty("Факультет информационных технологий");
 
         faculty.addGroup(group);
         faculty.addGroup(group1);
         faculty.addGroup(group2);
 
+        group.addStudents(student);
+        group.addStudents(student2);
+        group.addStudents(student3);
+        group.addStudents(student4);
+        group.addStudents(student5);
+        group.addStudents(student6);
+        group.addStudents(student7);
+        group.addStudents(student8);
+        group.addStudents(student9);
+        group.addStudents(student10);
+        group.addStudents(student11);
+        group.addStudents(student12);
+        group.addStudents(student13);
+        group.addStudents(student14);
+        group.addStudents(student15);
+        group.addStudents(student16);
+        group.addStudents(student17);
+        group.addStudents(student18);
+        group.addStudents(student19);
+        group.addStudents(student20);
+        group.addStudents(student21);
+        group1.addStudents(student22);
+        group2.addStudents(student23);
 
-
-
+        group.deleteStudent();
+        group2.transferStudents(group);
+        group1.transferStudents(group);
+        faculty.updateStatus();
+        System.out.println(faculty);
     }
 }

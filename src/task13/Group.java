@@ -3,7 +3,11 @@ package task13;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Group extends Function {
+public class Group  {
+    private final int group;
+    private List<Student> students;
+
+    double bal = 0;
     public Group(int group) {
         this.group = group;
         this.students = new ArrayList<>();
@@ -16,16 +20,33 @@ public class Group extends Function {
     public List<Student> getStudents(){
      return students;
     }
-    private final int group;
 
+    public void deleteStudent(){
+        students.removeIf(student -> student.getAverageBall() < 4.0);
+    }
+
+    public void transferStudents(Group targetGroup){
+        if(students.size()< 2){
+            for (Student student : new ArrayList<>(students)){
+                targetGroup.addStudent(student);
+                students.remove(student);
+            }
+        }
+    }
+
+    private void addStudent(Student student) {
+    }
+
+    public int getStudentCount(){
+        return students.size();
+    }
+    
     @Override
     public String toString() {
         return "Group{" +
-                "group=" + group +
-                ", students=" + students +
+                "Группа = " + group +
+                ", Студенты = " + students +
                 '}';
     }
-
-    private List<Student> students;
 }
 

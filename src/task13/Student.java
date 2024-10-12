@@ -1,13 +1,24 @@
 package task13;
 
+import java.util.List;
+
 public class Student {
-    public Student(String name, String surName, String birthday, String city, double averageBall) {
+    private final String name;
+    private final String surName;
+    private final String birthday;
+    private final String city;
+    private final int average;
+    List<Integer> averageBall;
+
+    public Student(String name, String surName, String birthday, String city, List<Integer> averageBall, int average) {
         this.name = name;
         this.surName = surName;
         this.birthday = birthday;
         this.city = city;
         this.averageBall = averageBall;
+        this.average = calculateAverage();
     }
+
     public String getName() {
         return name;
     }
@@ -24,14 +35,18 @@ public class Student {
         return city;
     }
 
-    public double getAverageBall() {
-        return averageBall;
+    public int getAverage() {
+        return average;
     }
-    private final String name;
-    private final String surName;
-    private final String birthday;
-    private final String city;
 
+    private double calculatesAverage() {
+        int sum = 0;
+        for (int average : averageBall) {
+            sum += averageBall;
+        }
+        return (double) sum / averageBall.size();
+    }
+}
     @Override
     public String toString() {
         return "Student{" +
@@ -41,7 +56,4 @@ public class Student {
                 ", city='" + city + '\'' +
                 ", averageBall=" + averageBall +
                 '}';
-    }
-
-    private final double averageBall;
 }
