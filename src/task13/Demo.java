@@ -65,5 +65,9 @@ public class Demo {
         group1.transferStudents(group);
         faculty.updateStatus();
         System.out.println(faculty);
+        System.out.println("Статус факультета: " + faculty.getStatus());
+        System.out.println("Средний балл группы 1: " + group.calculateAverageScore());
+        System.out.println("Средний балл группы 2: " + group1.calculateAverageScore());
+        System.out.println("Средний балл группы 3: " + group2.calculateAverageScore());
     }
 }
