@@ -8,12 +8,14 @@ public class FileDemo {
         System.out.println(s);
     }
     public static void main(String[] args) {
-        File f1 = new File("text.txt");
+        File f1 = new File("src\\text.txt");
         p("Имя файла " + f1.getName());
         p("Путь " + f1.getPath());
         p(f1.exists() ? "существует" : "не существует");
         p("Последнее изменение файла " + f1.lastModified());
         p("Размер" + f1.length() + "байт");
+
+        System.out.println("Текущая рабочая директория: " + System.getProperty("user.dir"));
 
     }
 }
