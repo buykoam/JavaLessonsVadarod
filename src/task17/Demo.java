@@ -1,9 +1,7 @@
 package task17;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Demo {
     public static void main(String[] args) {
@@ -48,6 +46,50 @@ public class Demo {
         MillionPopulation.ifPresent(System.out::println);
 
         //1.7. Отобрать города с населением больше 1 млн.
+        List<City> citiesOverMillion = cities.stream()
+                .filter(city -> city.getPopulation() > 1000000)
+                .collect(Collectors.toList());
+        System.out.println("Города с населением больше 1 млн.");
+        citiesOverMillion.forEach(System.out::println);
+
+        //Отсортировать города по населению по возрастанию. По убыванию.
+        List<City> sortedAscending = cities.stream()
+                .sorted(Comparator.comparingLong(City::getPopulation))
+                .collect(Collectors.toList());
+        System.out.println("Сортировка по возврастанию:");
+        sortedAscending.forEach(System.out::println);
+
+        List<City> sortedDescending = cities.stream()
+                .sorted(Comparator.comparingLong(City::getPopulation).reversed())
+                .collect(Collectors.toList());
+        System.out.println("Сортировка по убыванию:");
+        sortedDescending.forEach(System.out::println);
+
+        // 1.9. Создать коллекцию из имён города
+        List<String> cityNames = cities.stream()
+                .map(City::getNameCity)
+                .collect(Collectors.toList());
+        System.out.println("City names: " + cityNames);
+
+        // 1.10. Посчитать среднее количество населения среди всех городов.
+        double averagePopulation = cities.stream()
+                .mapToLong(City::getPopulation)
+                .average()
+                .orElse(0);
+        System.out.println("Average population: " + averagePopulation);
+
+        // 1.11. Проверить, есть ли город Осло в вашей коллекции
+        boolean hasOslo = cities.stream()
+                .anyMatch(city -> city.getNameCity().equalsIgnoreCase("Oslo"));
+        System.out.println("Is Oslo present: " + hasOslo);
+
+        // 1.12. Найти город Осло в коллекции и выбросить Exception, если такого нет.
+        City oslo = cities.stream()
+                .filter(city -> city.getNameCity().equalsIgnoreCase("Осло"))
+                .findFirst()
+                .orElseThrow(() -> new NoSuchElementException("City Oslo not found"));
+        System.out.println("Found city: " + oslo);
+
 
     }
 }
