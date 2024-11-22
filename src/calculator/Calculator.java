@@ -1,9 +1,10 @@
 package calculator;
 
 import calculator.operation.Operation;
+import calculator.parser.CalcStringParser;
 
 public class Calculator {
-    private final static String START_RESULT_STRING = "= ";
+    private  static final String START_RESULT_STRING = "= ";
     private CalcStringParser calcStringParser;
     public Calculator(CalcStringParser calcStringParser){
         this.calcStringParser = calcStringParser;
